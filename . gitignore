@@ -1,0 +1,10 @@
+.env
+api3/config/secrets.env
+key/privateKey.json
+key/publicKey.json
+testfile/testfile.dec
+testfile/testfile.enc
+testfile/testfile.iv
+ipfs
+orbit/node_modules
+node_modules

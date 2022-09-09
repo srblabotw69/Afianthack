@@ -1,0 +1,3 @@
+This is a test file.
+To encrypt file, use testfile.txt as input parameter.
+To decrypt file, use testfile.enc as input parameter.

@@ -1,0 +1,62 @@
+mkdir Afianthack
+
+cd Afianthack
+
+npm init -y
+
+npm install commander
+
+npm install --save inquirer@^8.0.0
+
+npm i dotnet
+
+npm install js-mcs-sdk
+
+Ensure the following .env files are updated with your latest keys and values:
+.env
+api3/.env
+
+//mkdir filswan
+//https://docs.filswan.com/multi-chain-storage/developer-quickstart/sdk/js-mcs-sdk/get-started
+
+
+npm install colors
+
+npm install pad
+
+//ion
+npm install @decentralized-identity/ion-tools
+
+//api3
+//follow the installation instructions, but put everything in api3/ folder instead.
+//https://docs.api3.org/airnode/v0.7/grp-providers/tutorial/quick-deploy-container/
+
+npm install shelljs
+
+Install the Docker Desktop.
+ 
+docker rm quick-deploy-container-airnode-filswan-hack1
+
+docker run --detach \
+  --volume "$(pwd)/api3/config:/app/config" \
+  --name quick-deploy-container-airnode-hack1 \
+  api3/airnode-client:0.7.2
+
+// TEST
+docker exec -it quick-deploy-container-airnode-hack1 node src/cli/test-api.js \
+  -e 37173cca1c8ecf37ccb3bf9e5b801348f24648aafb2050033f6818972afae33f \
+  -p '{"deal_id":"475500", "source_file_upload_id":"475500"}'
+
+mkdir orbitdb
+cd orbitdb
+npm init -y
+npm install orbit-db
+npm install jsonwebtoken
+npm install dotenv --save
+
+change: node_module/orbit-db/src/OrbitDB.js
+FROM module.exports = OrbitDB
+TO module.exports = { OrbitDB }
+
+Ensure that orbitdb/package.json have the following:
+"type": "module"

@@ -1,0 +1,131 @@
+{
+  "chains": [
+    {
+      "authorizers": [],
+      "contracts": {
+        "AirnodeRrp": "0xa0AD79D995DdeeB18a14eAef56A549A04e3Aa1Bd"
+      },
+      "id": "4",
+      "providers": {
+        "myChainProvider": {
+          "url": "${CHAIN_PROVIDER_URL}"
+        }
+      },
+      "type": "evm",
+      "options": {
+        "txType": "eip1559",
+        "priorityFee": {
+          "value": 3.12,
+          "unit": "gwei"
+        },
+        "baseFeeMultiplier": 2,
+        "fulfillmentGasLimit": 500000
+      },
+      "maxConcurrency": 100
+    }
+  ],
+  "nodeSettings": {
+    "cloudProvider": {
+      "type": "local"
+    },
+    "airnodeWalletMnemonic": "${AIRNODE_WALLET_MNEMONIC}",
+    "heartbeat": {
+      "enabled": false
+    },
+    "httpGateway": {
+      "enabled": false
+    },
+    "httpSignedDataGateway": {
+      "enabled": false
+    },
+    "logFormat": "plain",
+    "logLevel": "INFO",
+    "nodeVersion": "0.7.2",
+    "stage": "dev"
+  },
+  "triggers": {
+    "rrp": [
+      {
+        "endpointId": "37173cca1c8ecf37ccb3bf9e5b801348f24648aafb2050033f6818972afae33f",
+        "oisTitle": "Filswan Basic Request",
+        "endpointName": "filswanData"
+      }
+    ],
+    "http": [
+      {
+        "endpointId": "37173cca1c8ecf37ccb3bf9e5b801348f24648aafb2050033f6818972afae33f",
+        "oisTitle": "Filswan Basic Request",
+        "endpointName": "filswanData"
+      }
+    ],
+    "httpSignedData": []
+  },
+  "templates": [],
+  "ois": [
+    {
+      "oisFormat": "1.0.0",
+      "title": "Filswan Basic Request",
+      "version": "1.0.0",
+      "apiSpecifications": {
+        "servers": [
+          {
+            "url": "https://mcs-api.filswan.com/api/v1/storage"
+          }
+        ],
+        "paths": {
+          "/deal/detail/{deal_id}": {
+            "get": {
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "deal_id"
+                },
+                {
+                  "in": "query",
+                  "name": "source_file_upload_id"
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "securitySchemes": {}
+        },
+        "security": {}
+      },
+      "endpoints": [
+        {
+          "name": "filswanData",
+          "operation": {
+            "method": "get",
+            "path": "/deal/detail/{deal_id}"
+          },
+          "fixedOperationParameters": [],
+          "reservedParameters": [
+            {
+              "name": "_type",
+              "fixed": "bool"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "deal_id",
+              "operationParameter": {
+                "in": "path",
+                "name": "deal_id"
+              }
+            },
+            {
+              "name": "source_file_upload_id",
+              "operationParameter": {
+                "in": "query",
+                "name": "source_file_upload_id"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "apiCredentials": []
+}
