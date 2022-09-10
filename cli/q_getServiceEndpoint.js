@@ -25,11 +25,11 @@ module.exports = function () {
 
                 aync = myfn2 = () => {
                     const { which, echo, exit, rm, cp, cd } = pkg;  
-                    pkg.exec("docker start quick-deploy-container-airnode-filswantest1")
-                    pkg.exec("docker exec quick-deploy-container-airnode-filswantest1 node src/cli/test-api.js \
+                    pkg.exec("docker start quick-deploy-container-airnode-hack1")
+                    pkg.exec("docker exec quick-deploy-container-airnode-hack1 node src/cli/test-api.js \
                     -e 37173cca1c8ecf37ccb3bf9e5b801348f24648aafb2050033f6818972afae33f \
-                    -p \'{\"deal_id\":" + answers.dealId + ", \"source_file_upload_id\":\"475500\"}\'")
-                    pkg.exec("docker stop quick-deploy-container-airnode-filswantest1")
+                    -p \'{\"deal_id\":" + answers.dealId + ", \"source_file_upload_id\":\"" + answers.dealId + "\"}\'")
+                    pkg.exec("docker stop quick-deploy-container-airnode-hack1")
                 }
                 myfn2();
             }
