@@ -19,14 +19,14 @@ Run
 </br>
 <p>
 Options:</br>
-  -d, --did       generate a new DID (ION)</br>
-  -u, --upload    upload to service endpoint (FilSwan)</br>
-  -e, --encrypt   encrypt or decrypt file</br>
-  -j, --jwt       generate a json web token (JWT)</br>
-  -s, --service   get files from service endpoint (API3 and FilSwan)</br>
-  -m, --mint      mint NFT with DID (FilSwan)</br>
-  -t, --maintain  Get file details or list all files (FilSwan)</br>
-  -h, --help      display help for command</br>
+  -d, --did       &nbsp;&nbsp;generate a new DID (ION)</br>
+  -u, --upload    &nbsp;&nbsp;upload to service endpoint (FilSwan)</br>
+  -e, --encrypt   &nbsp;&nbsp;encrypt or decrypt file</br>
+  -j, --jwt       &nbsp;&nbsp;generate a json web token (JWT)</br>
+  -s, --service   &nbsp;&nbsp;get files from service endpoint (API3 and FilSwan)</br>
+  -m, --mint      &nbsp;&nbsp;mint NFT with DID (FilSwan)</br>
+  -t, --maintain  &nbsp;&nbsp;Get file details or list all files (FilSwan)</br>
+  -h, --help      &nbsp;&nbsp;display help for command</br>
 </p>
   
   
