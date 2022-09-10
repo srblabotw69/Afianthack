@@ -17,7 +17,17 @@ Run
 
 %>  node index.js \<option>
 
-
+Options:
+  -d, --did       generate a new DID (ION)
+  -u, --upload    upload to service endpoint (FilSwan)
+  -e, --encrypt   encrypt or decrypt file
+  -j, --jwt       generate a json web token (JWT)
+  -s, --service   get files from service endpoint (API3 and FilSwan)
+  -m, --mint      mint NFT with DID (FilSwan)
+  -t, --maintain  Get file details or list all files (FilSwan)
+  -h, --help      display help for command
+  
+  
 Demo
 ----
 
