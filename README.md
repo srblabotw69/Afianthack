@@ -15,7 +15,7 @@ Please see Afiant-Paper.pdf to see a detailed overview of Afiant.
 Run
 ---
 
-%>  node index.js '<option>'
+%>  node index.js \<option>\
 
 
 Demo
