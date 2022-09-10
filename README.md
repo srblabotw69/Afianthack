@@ -10,7 +10,7 @@ Please see <a href="https://github.com/srblabotw69/Afianthack/blob/master/Afiant
 Installation
 -------------
 
-First download the entire Afianthack directory to your local computer.  Then open a command line prompt from Afianthack directory and follow the steps in sequence in the installation.txt file.
+First download the entire Afianthack directory to your local computer.  Then open a command line prompt from Afianthack directory and follow the steps in sequence in the <a href="https://github.com/srblabotw69/Afianthack/blob/master/installation.txt">installation.txt</a> file.
 
 Run
 ---
@@ -33,7 +33,7 @@ Options:</br>
 Demo
 ----
 
-Please see demo.txt. Shows Afiant commands and their outputs.
+Please see <a href="https://github.com/srblabotw69/Afianthack/blob/master/demo.txt">demo.txt</a>. Shows Afiant commands and their outputs.
 
 
 Help
