@@ -15,7 +15,7 @@ Please see Afiant-Paper.pdf to see a detailed overview of Afiant.
 Run
 ---
 <p>
-%>  node index.js \<option></br>
+%>  node index.js \<option> 
 </br>
 Options:</br>
   -d, --did       generate a new DID (ION)</br>
