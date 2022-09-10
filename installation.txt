@@ -19,7 +19,6 @@ api3/.env
 //mkdir filswan
 //https://docs.filswan.com/multi-chain-storage/developer-quickstart/sdk/js-mcs-sdk/get-started
 
-
 npm install colors
 
 npm install pad
@@ -35,16 +34,24 @@ npm install shelljs
 
 Install the Docker Desktop.
  
-docker rm quick-deploy-container-airnode-filswan-hack1
+Install the Docker Desktop (opens new window) and launch it.
+ 
+docker rm quick-deploy-container-airnode-filswan
 
 docker run --detach \
   --volume "$(pwd)/api3/config:/app/config" \
-  --name quick-deploy-container-airnode-hack1 \
+  --name quick-deploy-container-airnode-filswan \
   api3/airnode-client:0.7.2
 
+From command line, copy airnode endpoint e.g. 449844b020bbd8fea80ba0b0f028697a201a4d53e4120693db9bd1d748182a66
+
+In api3/config.json update "triggers endpointId" and "http endpoint" with airnode endpoint e.g. 449844b020bbd8fea80ba0b0f028697a201a4d53e4120693db9bd1d748182a66
+
+In cli/q_getServiceEndpoint.js update the "docker exec" command with airnode endpoint e.g. 449844b020bbd8fea80ba0b0f028697a201a4d53e4120693db9bd1d748182a66
+
 // TEST
-docker exec -it quick-deploy-container-airnode-hack1 node src/cli/test-api.js \
-  -e 37173cca1c8ecf37ccb3bf9e5b801348f24648aafb2050033f6818972afae33f \
+docker exec -it quick-deploy-container-airnode-filswan node src/cli/test-api.js \
+  -e 449844b020bbd8fea80ba0b0f028697a201a4d53e4120693db9bd1d748182a66 \
   -p '{"deal_id":"475500", "source_file_upload_id":"475500"}'
 
 mkdir orbitdb
