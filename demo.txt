@@ -1,0 +1,438 @@
+
+###################################################################
+  -h, --help      display help for command
+###################################################################
+
+% node index.js -h
+Usage: index [options]
+
+Options:
+  -d, --did       generate a new DID (ION)
+  -u, --upload    upload to service endpoint (FilSwan)
+  -e, --encrypt   encrypt or decrypt file
+  -j, --jwt       generate a json web token (JWT)
+  -s, --service   get files from service endpoint (API3 and FilSwan)
+  -m, --mint      mint NFT with DID (FilSwan)
+  -t, --maintain  Get file details or list all files (FilSwan)
+  -h, --help      display help for command
+  
+
+###################################################################
+  -d, --did       generate a new DID (ION)
+###################################################################
+  
+% node index.js -d
+? Generate a new DID? Yes
+----------------------------
+You have input the following:
+Your new DID is:  true
+----------------------------
+creating a new DID...
+Created private/public key pair
+Public key: {
+  kty: 'EC',
+  crv: 'secp256k1',
+  x: 'NrN9UJc2AAaB9Fa3pIrvOOcy_9glitMubgALU1Z5RC4',
+  y: 'UDSSNIydY5s5OeVAFxc3o2Ljzy3TXHTSBZ2CQNo-Uag'
+}
+Wrote public key to key/publicKey.json
+Wrote private key to key/privateKey.json
+Generated DID: did:ion:EiC0zpdhlCsFwPprHCCY3RIARe33okP7HYv9tdSUs9vejg
+{"@context":"https://w3id.org/did-resolution/v1","didDocument":{"id":"did:ion:EiCjHFpU1Fm6Qnq7XIj_Gt2QGCpnwQrrnUWoVrM4H9we1A","@context":["https://www.w3.org/ns/did/v1",{"@base":"did:ion:EiCjHFpU1Fm6Qnq7XIj_Gt2QGCpnwQrrnUWoVrM4H9we1A"}],"service":[{"id":"#IdentityHub","type":"IdentityHub","serviceEndpoint":{"@context":"schema.identity.foundation/hub","@type":"UserServiceEndpoint","instance":["did:test:hub.id"],"origins":[]}}],"verificationMethod":[{"id":"#auth-key","controller":"did:ion:EiCjHFpU1Fm6Qnq7XIj_Gt2QGCpnwQrrnUWoVrM4H9we1A","type":"EcdsaSecp256k1VerificationKey2019","publicKeyJwk":{"kty":"EC","crv":"secp256k1","x":"53hsUK6agrBUYX7rxN-LZR60s8_XcfAF2iqug4Kv-UE","y":"hSWYRwXHiNm4oJPyakWoqBAtIx8Zxwzh52U2Oytzjfk"}}],"authentication":["#auth-key"]},"didDocumentMetadata":{"method":{"published":true,"recoveryCommitment":"EiAXhWTi_9eezd-GZRvOgBSRGhFTJd-jROr5YyylAgYLNA","updateCommitment":"EiDFhyN3--vu481IfuOTO2JtMrVYzwK_dWLMMX1DWceXeg"},"canonicalId":"did:ion:EiCjHFpU1Fm6Qnq7XIj_Gt2QGCpnwQrrnUWoVrM4H9we1A"}}
+ 
+
+###################################################################
+  -u, --upload    upload to service endpoint (FilSwan)
+###################################################################
+
+% node index.js -u
+? Enter the filename: testfile.txt
+? Do you want to create a JWT? (OrbitDB) Yes
+? Enter the DID didstring
+? Enter the token tokenstring
+? Do you want your file to be encrypted? Yes 
+----------------------------
+You have input the following:
+Filename:              testfile.txt
+JSONWebToken:          true
+Encryption:            true
+----------------------------
+creating JSON Web Token...
+encrypting file testfile.txt ...
+uploading file with encryption testfile.enc...
+File encrypted successfully and has the following contents:
+4dd779c17dda1d15deb222919792ef9e
+File encrypted!
+[
+  {
+    status: 'success',
+    data: {
+      source_file_upload_id: 478621,
+      payload_cid: 'QmNNjZu9ycFThScAXgKp4eAmrcfQ24Vc8fzE9mJFagztph',
+      ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmNNjZu9ycFThScAXgKp4eAmrcfQ24Vc8fzE9mJFagztph',
+      file_size: 144,
+      w_cid: '2cc9b653-5161-4eac-85b8-cf9770348cadQmNNjZu9ycFThScAXgKp4eAmrcfQ24Vc8fzE9mJFagztph'
+    }
+  }
+]
+Swarm listening on /ip4/127.0.0.1/tcp/4002/p2p/12D3KooWKuyv6txY6FTBHw3E47QgLzDHJWgXn5vwQcP1GegEQ4RH
+Swarm listening on /ip4/192.168.1.29/tcp/4002/p2p/12D3KooWKuyv6txY6FTBHw3E47QgLzDHJWgXn5vwQcP1GegEQ4RH
+Swarm listening on /ip4/127.0.0.1/tcp/4003/ws/p2p/12D3KooWKuyv6txY6FTBHw3E47QgLzDHJWgXn5vwQcP1GegEQ4RH
+undefined
+Here is the token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaWRzdHJpbmciOiJkaWRzdHJpbmciLCJpYXQiOjE2NjI4MjE5NDUsImV4cCI6MTY2MjgyOTE0NX0.3FyyyaJtohhRVm6MVmJBgzzpOThupMKFm6TjNcRameY
+
+###################################################################
+  -j, --jwt       generate a json web token (JWT)
+###################################################################
+
+% node index.js -j
+? Do you want to create a JWT? (OrbitDB) Yes
+? Enter the DID didstring
+? Enter the token tokenstring
+----------------------------
+You have input the following:
+JSONWebToken:          true
+----------------------------
+creating JSON Web Token...
+Swarm listening on /ip4/127.0.0.1/tcp/4002/p2p/12D3KooWKuyv6txY6FTBHw3E47QgLzDHJWgXn5vwQcP1GegEQ4RH
+Swarm listening on /ip4/192.168.1.29/tcp/4002/p2p/12D3KooWKuyv6txY6FTBHw3E47QgLzDHJWgXn5vwQcP1GegEQ4RH
+Swarm listening on /ip4/127.0.0.1/tcp/4003/ws/p2p/12D3KooWKuyv6txY6FTBHw3E47QgLzDHJWgXn5vwQcP1GegEQ4RH
+undefined
+Here is the token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaWRzdHJpbmciOiJkaWRzdHJpbmciLCJpYXQiOjE2NjI4MjE2MDQsImV4cCI6MTY2MjgyODgwNH0.-tZrTRbf8ZF6HW9SO2iIdNa85iMMA4Svtj8jo5ztcJ8
+
+
+###################################################################
+-s, --service   get files from service endpoint (API3 and FilSwan)
+###################################################################
+
+% node index.js -s
+? Retrieve data from service endpoint? Yes
+? Enter the deal Id. 475500
+----------------------------
+You have input the following:
+Retrieve data from service endpoint:  true
+deal Id:  475500
+----------------------------
+retrieving data from service endpoint...
+quick-deploy-container-airnode-filswan
+Running API test call with arguments {"endpoint-id":"449844b020bbd8fea80ba0b0f028697a201a4d53e4120693db9bd1d748182a66","endpointId":"449844b020bbd8fea80ba0b0f028697a201a4d53e4120693db9bd1d748182a66","parameters":"{\"deal_id\":475500, \"source_file_upload_id\":\"475500\"}"}
+{"success":true,"data":{"rawValue":{"status":"success","data":{"dao_signature":[{"wallet_signer":"0xbE14Eb1ffcA54861D3081560110a45F4A1A9e9c5","tx_hash":null,"status":null,"create_at":null},{"wallet_signer":"0x21aE11DF412002378b73A28EF137FBfC59332BA4","tx_hash":null,"status":null,"create_at":null},{"wallet_signer":"0x71632B0e6b5347BAc09E85a40B329397af473933","tx_hash":null,"status":null,"create_at":null},{"wallet_signer":"0x800210CfB747992790245eA878D32F188d01a03A","tx_hash":null,"status":null,"create_at":null}],"dao_threshold":2,"source_file_upload_deal":{"deal_id":475500,"deal_cid":"","message_cid":"bafy2bzaceaswjxegsajcpjsz3grwufdjhv7khuugvxfchqmz6o7c5z2jxqbq4","height":126213,"piece_cid":"baga6ea4seaql7jq77bje7p562dfnczcoh6efbymmx34gi4ylw2eswfmykragqei","verified_deal":false,"storage_price_per_epoch":10000000000,"signature":"","signature_type":"","created_at":1602092790,"piece_size_format":null,"start_height":134848,"end_height":758219,"client":"f3rf334djo4e76f44hz6tbkh5maerg42nr5b5squsb7kty336zv6pdnnwhyc2qaijpq2dwkpyy3fwfeofjtpja","client_collateral_format":"000000000000000000","provider":"f016398","provider_tag":"","verified_provider":0,"provider_collateral_format":"000000000000000000","status":0,"network_name":"filecoin_mainnet","storage_price":6233710000000000,"ipfs_url":"https://calibration-ipfs.filswan.com/ipfs/QmQFPeQFtcSFZEVTGyCSwRNM4MWjng4azJFNekJWqCR1Uj","file_name":"0xeA67cfe03d3f59B7dcD7B46CDf6Cf0C3d5089F12.txt","w_cid":"1279e46e-3192-4605-a866-4f2f554ad951QmQFPeQFtcSFZEVTGyCSwRNM4MWjng4azJFNekJWqCR1Uj","car_file_payload_cid":"bafybeia2s7p2kuicyyprbab5zuilacahzcy2sd3i6tn46gkjr2g3pv634m","locked_at":1657537941,"locked_fee":"1500000000000000000","unlocked":false}}},"encodedValue":"0x0000000000000000000000000000000000000000000000000000000000000001","values":[true]}}
+quick-deploy-container-airnode-filswan
+
+
+###################################################################
+  -e, --encrypt   encrypt or decrypt file
+###################################################################
+
+1. 
+
+% node index.js -e
+? Do you want to  encrypt file
+? Enter the filename: testfile.txt
+----------------------------
+You have input the following:
+file:  testfile.txt
+----------------------------
+encrypting file...
+File encrypted successfully and has the following contents:
+3a75812e9fabcab4d388d72aa2a8188a
+File encrypted!
+
+2.
+
+% node index.js -e
+? Do you want to  decrypt file
+? Enter the encrypted filename: testfile.enc
+----------------------------
+You have input the following:
+file:  testfile.enc
+----------------------------
+decrypting file...
+File decrypted successfully to testfile/testfile.dec
+
+
+###################################################################
+  -m, --mint      mint NFT with DID (FilSwan)
+###################################################################
+
+% node index.js -m
+? Mint a new NFT via FilSwan? Yes
+? Associate a DID with the NFT? Yes
+? Enter the DID DID:ExampleString
+----------------------------
+You have input the following:
+Mint NFT:  true
+Associate DID with NFT:  true
+DID:  DID:ExampleString
+----------------------------
+minting NFT with DID...
+{
+  status: 'success',
+  data: {
+    id: 87452,
+    source_file_upload_id: 476737,
+    nft_tx_hash: '0x077f0b015abf6ea69d8461dcee1f04ae731395ea685c5cc154505c2c509f7e23',
+    mint_address: '0x1A1e5AC88C493e0608C84c60b7bb5f04D9cF50B3',
+    token_id: '106131',
+    create_at: 1662821820,
+    update_at: 1662821820
+  }
+}
+
+
+###################################################################
+  -t, --maintain  Get file details or list all files (FilSwan)
+###################################################################
+
+1. Get file details
+
+% node index.js -t
+? Do you want to  get file details
+? Enter the file upload Id: 476737
+? Enter the deal Id: 87301
+----------------------------
+You have input the following:
+File Maintenance Selection:  get file details
+----------------------------
+{
+  status: 'success',
+  data: {
+    dao_signature: [ [Object], [Object], [Object], [Object] ],
+    dao_threshold: 2,
+    source_file_upload_deal: {
+      deal_id: 87301,
+      deal_cid: '',
+      message_cid: 'bafy2bzaceahcasu5cb2zmarwydx7fhv7qvjrivzqtbrzckzs5tglh7pkgc74k',
+      height: 38568,
+      piece_cid: 'baga6ea4seaqcf3uzkr7q3l3fnqo4veq6crnicoliako2453aksf7hjgcg6olgli',
+      verified_deal: false,
+      storage_price_per_epoch: 61035,
+      signature: '',
+      signature_type: '',
+      created_at: 1599463440,
+      piece_size_format: null,
+      start_height: 44317,
+      end_height: 746939,
+      client: 'f1nslxql4pck5pq7hddlzym3orxlx35wkepzjkm3i',
+      client_collateral_format: '000000000000000000',
+      provider: 'f03134',
+      provider_tag: '',
+      verified_provider: 0,
+      provider_collateral_format: '000000000000000000',
+      status: 0,
+      network_name: 'filecoin_mainnet',
+      storage_price: 42884533770,
+      ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmQFPeQFtcSFZEVTGyCSwRNM4MWjng4azJFNekJWqCR1Uj',
+      file_name: '0xeA67cfe03d3f59B7dcD7B46CDf6Cf0C3d5089F12.txt',
+      w_cid: '3c1d1b8c-23b7-443a-a6e3-911f1ff5fd9fQmQFPeQFtcSFZEVTGyCSwRNM4MWjng4azJFNekJWqCR1Uj',
+      car_file_payload_cid: '',
+      locked_at: 0,
+      locked_fee: '',
+      unlocked: false
+    }
+  }
+}
+
+
+2. 
+
+% node index.js -t
+? Do you want to  list all files
+----------------------------
+You have input the following:
+File Maintenance Selection:  list all files
+----------------------------
+[
+  {
+    source_file_upload_id: 478590,
+    car_file_id: 0,
+    file_name: 'testfile.enc',
+    file_size: 144,
+    upload_at: 1662815633,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/Qmaa73AduEWDQ8UpAFoKAgjiTF65F6EcF83KAycXttZ26G',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: '52cb5267-e0cf-4d9a-8847-b83360b7b93eQmaa73AduEWDQ8UpAFoKAgjiTF65F6EcF83KAycXttZ26G',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478354,
+    car_file_id: 0,
+    file_name: 'test.txt',
+    file_size: 10,
+    upload_at: 1662660937,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmS9o3dBt26AUgyFSyqpG5f1QpvnLyKqfdSMWQQMPKMvDK',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: 'b29918c0-5ada-4789-9f63-39c0d1d61d98QmS9o3dBt26AUgyFSyqpG5f1QpvnLyKqfdSMWQQMPKMvDK',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478353,
+    car_file_id: 0,
+    file_name: 'testfile.txt',
+    file_size: 128,
+    upload_at: 1662660804,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: '066f14c0-748c-40c5-9a1b-2710cf9cee33QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478352,
+    car_file_id: 0,
+    file_name: 'testfile.txt',
+    file_size: 128,
+    upload_at: 1662660459,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: '45e051a8-9625-48d8-9109-3fa4521fe0c1QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478351,
+    car_file_id: 0,
+    file_name: 'testfile.txt',
+    file_size: 128,
+    upload_at: 1662660437,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: 'ca3395fe-310b-461b-97af-826d88c62835QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478350,
+    car_file_id: 0,
+    file_name: 'testfile.txt',
+    file_size: 128,
+    upload_at: 1662660295,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: 'dc79c1f3-e3e5-4f8f-86dd-36aa0f94358aQmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478348,
+    car_file_id: 0,
+    file_name: 'testfile.txt',
+    file_size: 128,
+    upload_at: 1662659072,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: '798569e5-cf1e-40f5-bd92-9784530ca0c6QmZ9sNAeMKW3qPGub8ArnA32sGMtaFwTbVKcuioYRdRXND',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478347,
+    car_file_id: 0,
+    file_name: 'testfile.txt',
+    file_size: 9,
+    upload_at: 1662658535,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmVF3ewbVRgRgim7TppqjSKy5gq1BAzWZmhRpEy9PpGitD',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: 'd328fa50-b463-47c2-bf1b-2f708c1cd41eQmVF3ewbVRgRgim7TppqjSKy5gq1BAzWZmhRpEy9PpGitD',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478346,
+    car_file_id: 0,
+    file_name: 'testfile.enc',
+    file_size: 9,
+    upload_at: 1662658535,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmVF3ewbVRgRgim7TppqjSKy5gq1BAzWZmhRpEy9PpGitD',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: 'ac345795-b56f-4331-99f2-63b986caf4ddQmVF3ewbVRgRgim7TppqjSKy5gq1BAzWZmhRpEy9PpGitD',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  },
+  {
+    source_file_upload_id: 478345,
+    car_file_id: 0,
+    file_name: 'testfile.txt',
+    file_size: 9,
+    upload_at: 1662658289,
+    duration: 525,
+    ipfs_url: 'https://calibration-ipfs.filswan.com/ipfs/QmVF3ewbVRgRgim7TppqjSKy5gq1BAzWZmhRpEy9PpGitD',
+    pin_status: 'Pinned',
+    payload_cid: '',
+    w_cid: '02aa9fae-da2d-4d39-91bc-9d8fd1d31e62QmVF3ewbVRgRgim7TppqjSKy5gq1BAzWZmhRpEy9PpGitD',
+    status: 'Pending',
+    deal_success: false,
+    is_minted: false,
+    token_id: null,
+    mint_address: null,
+    nft_tx_hash: null,
+    offline_deal: []
+  }
+]
