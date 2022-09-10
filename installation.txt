@@ -12,12 +12,13 @@ npm i dotnet
 
 npm install js-mcs-sdk
 
+//Install Filswan
+//https://docs.filswan.com/multi-chain-storage/developer-quickstart/sdk/js-mcs-sdk/get-started
+
 Ensure the following .env files are updated with your latest keys and values:
 .env
-api3/.env
-
-//mkdir filswan
-//https://docs.filswan.com/multi-chain-storage/developer-quickstart/sdk/js-mcs-sdk/get-started
+  PRIVATE_KEY=
+  RPC_URL=
 
 npm install colors
 
@@ -26,9 +27,14 @@ npm install pad
 //ion
 npm install @decentralized-identity/ion-tools
 
-//api3
-//follow the installation instructions, but put everything in api3/ folder instead.
+//Install API3
+//Follow the installation instructions, but put everything in api3/ folder instead.
 //https://docs.api3.org/airnode/v0.7/grp-providers/tutorial/quick-deploy-container/
+
+Ensure the following .env files are updated with your latest keys and values:
+api3/.env
+  CHAIN_PROVIDER_URL=
+  AIRNODE_WALLET_MNEMONIC=
 
 npm install shelljs
 
