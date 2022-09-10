@@ -1,7 +1,7 @@
 # Afianthack
 
 
-Detailed Overview
+Overview
 ------------------
 
 Please see Afiant-Paper.pdf to see a detailed overview of Afiant.  
