@@ -18,6 +18,12 @@ Run
 %>  node index.js <option>
 
 
+Demo
+----
+
+Please see demo.txt. Shows Afiant commands and their outputs.
+
+
 Help
 ----
 
