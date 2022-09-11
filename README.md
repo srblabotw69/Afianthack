@@ -4,7 +4,7 @@
 Overview
 ------------------
 
-Please see <a href="https://github.com/srblabotw69/Afianthack/blob/master/Afiant-Paper.pdf">Afiant-Paper.pdf</a> to see a detailed overview of Afiant.  
+Please see <a href="https://github.com/srblabotw69/Afianthack/blob/master/Afiant-Paper.pdf">Afiant-Paper.pdf</a> for a detailed overview of Afiant.  
 
 
 Installation
