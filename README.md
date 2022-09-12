@@ -6,6 +6,7 @@ Overview
 
 Please see <a href="https://github.com/srblabotw69/Afianthack/blob/master/Afiant-Paper.pdf">Afiant-Paper.pdf</a> for a detailed overview of Afiant.  
 
+
 <img src="https://github.com/srblabotw69/Afianthack/blob/master/techOverview.png" width="500" height="234" />
 
 Installation
