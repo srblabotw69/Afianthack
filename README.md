@@ -8,6 +8,8 @@ Please see <a href="https://github.com/srblabotw69/Afianthack/blob/master/Afiant
 
 ![alt text](https://github.com/srblabotw69/Afianthack/blob/master/techOverview.png)
 
+<img src="https://github.com/srblabotw69/Afianthack/blob/master/techOverview.png" width="700" height="327" />
+
 Installation
 -------------
 
